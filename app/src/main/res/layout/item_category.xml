@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="genre"
+            type="alireza.sn.moviesguide.model.Genres" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/textView_category"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@{genre.name,default=genre}"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:elevation="1dp"
+                android:background="@color/dark_blue_7"
+                android:textColor="@color/dark_yellow"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_lage">40dp</dimen>
+    <dimen name="cardCorner_suit">20dp</dimen>
+    <dimen name="size_titles">30sp</dimen>
+    <dimen name="margin_mini">5dp</dimen>
+</resources>

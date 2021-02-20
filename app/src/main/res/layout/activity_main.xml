@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="labelName"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.MainActivity"
+        android:background="@color/dark_blue_9">
+
+        <LinearLayout
+            android:id="@+id/actionBar"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_above="@id/actionBar"
+            android:background="@color/dark_blue_7"
+            android:gravity="center_vertical"
+            android:weightSum="4">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="@{labelName,default=movies}"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/dark_yellow"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/sear_icon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                app:srcCompat="@drawable/ic_search"
+                android:layout_margin="2dp"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/watchlist_icon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                app:srcCompat="@drawable/ic_watch_list"
+                android:onClick="goToWatchList"
+                android:layout_margin="2dp" />
+
+
+        </LinearLayout>
+
+        <fragment
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_host"
+            tools:layout_editor_absoluteX="223dp"
+            tools:layout_editor_absoluteY="187dp"
+            android:layout_above="@id/card_view"
+            android:layout_below="@id/actionBar"
+            android:layout_margin="2dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/button_nav"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:menu="@menu/menu_button"
+                android:theme="@style/Theme.navigationBottom"
+                android:background="@color/dark_blue_7"/>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/moviesFragment"
+        android:title="movies"
+        android:icon="@drawable/ic_movie"/>
+
+    <item
+        android:id="@+id/categoryFragment"
+        android:title="category"
+        android:icon="@drawable/ic_category"/>
+</menu>
